@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import ProjectGrid from '../components/ProjectGrid.jsx';
+
+// MEGA CATÁLOGO de proyectos cinematográficos
+const projectNames = [
+  'Midnight Dreams', 'Urban Pulse', 'Golden Hour', 'Neon Nights', 'Silent Echo',
+  'Crystal Vision', 'Shadow Play', 'Electric Feel', 'Velvet Touch', 'Chrome Hearts',
+  'Desert Rose', 'Arctic Blue', 'Crimson Tide', 'Silver Lining', 'Black Diamond',
+  'Quantum Leap', 'Future Shock', 'Time Warp', 'Space Odyssey', 'Digital Dreams',
+  'Analog Soul', 'Vintage Vibes', 'Modern Classic', 'Raw Energy', 'Pure Motion',
+  'Liquid Gold', 'Fire & Ice', 'Earth Tones', 'Sky High', 'Deep Dive',
+  'Fast Forward', 'Slow Motion', 'Double Vision', 'Triple Threat', 'Final Cut',
+  'First Light', 'Last Dance', 'Never Ending', 'Always Rising', 'Forever Young',
+  'Eternal Flame', 'Infinite Loop', 'Parallel Lines', 'Cross Roads', 'Full Circle',
+  'Breaking Point', 'Turning Tide', 'Rising Sun', 'Setting Moon', 'Shooting Star',
+  'Ocean Drive', 'Mountain High', 'Valley Low', 'River Flow', 'Wind Blow',
+  'Storm Surge', 'Heat Wave', 'Cold Front', 'Perfect Storm', 'Clear Skies',
+  'Dark Matter', 'Light Speed', 'Gravity Pull', 'Time Travel', 'Space Walk',
+  'Moon Dance', 'Sun Burst', 'Star Dust', 'Galaxy Quest', 'Universe One',
+  'Parallel World', 'Mirror Image', 'Double Take', 'Triple Play', 'Quad Core',
+  'Fifth Element', 'Sixth Sense', 'Seven Sins', 'Eight Ball', 'Nine Lives',
+  'Perfect Ten', 'Eleven Hour', 'Midnight Oil', 'Dawn Patrol', 'Dusk Till Dawn',
+  'Night Shift', 'Day Dream', 'Twilight Zone', 'Golden Gate', 'Silver Screen',
+  'Bronze Age', 'Iron Will', 'Steel Blue', 'Copper Tone', 'Platinum Blonde',
+  'Diamond Life', 'Ruby Red', 'Emerald City', 'Sapphire Blue', 'Pearl White',
+  'Black Pearl', 'White Noise', 'Grey Matter', 'Pink Floyd', 'Blue Monday'
+];
+
+const clients = [
+  'Nike', 'Adidas', 'Puma', 'New Balance', 'Under Armour',
+  'Vogue', 'Harper\'s Bazaar', 'GQ', 'Esquire', 'Elle',
+  'Netflix', 'HBO', 'Apple TV+', 'Amazon Prime', 'Disney+',
+  'Spotify', 'Apple Music', 'Tidal', 'SoundCloud', 'Deezer',
+  'Louis Vuitton', 'Gucci', 'Prada', 'Hermès', 'Chanel',
+  'Dior', 'Balenciaga', 'Versace', 'Armani', 'Burberry',
+  'Mercedes-Benz', 'BMW', 'Audi', 'Porsche', 'Ferrari',
+  'Tesla', 'Rivian', 'Lucid', 'Polestar', 'Genesis',
+  'Apple', 'Samsung', 'Google', 'Microsoft', 'Sony',
+  'Corona', 'Heineken', 'Stella Artois', 'Peroni', 'Modelo',
+  'Red Bull', 'Monster', 'Rockstar', 'Bang', 'Celsius',
+  'Coca-Cola', 'Pepsi', 'Sprite', 'Fanta', 'Mountain Dew',
+  'Bad Bunny', 'Rosalía', 'Drake', 'The Weeknd', 'Billie Eilish',
+  'Dua Lipa', 'Olivia Rodrigo', 'Taylor Swift', 'Ariana Grande', 'Post Malone'
+];
+
+const imagePool = [
+  'cinema-1', 'cinema-2', 'cinema-3', 'cinema-4', 'cinema-5', 'cinema-6',
+  'fashion-1', 'fashion-2', 'fashion-3', 'fashion-4', 'fashion-5',
+  'neon-1', 'neon-city-1', 'neon-city-2', 'neon-city-3', 'neon-city-4',
+  'ocean-1', 'nature-1', 'nature-2', 'nature-3', 'nature-4',
+  'portrait-1', 'portrait-2', 'portrait-3', 'portrait-4', 'portrait-5',
+  'dark-cinema-1', 'dark-cinema-2', 'dark-cinema-3', 'dark-cinema-4',
+  'abstract-1', 'abstract-2', 'abstract-3', 'abstract-4',
+  'architecture-1', 'architecture-2', 'architecture-3', 'architecture-4',
+  'moody-1', 'moody-2', 'moody-3', 'moody-4',
+  'vibrant-1', 'vibrant-2', 'vibrant-3', 'vibrant-4'
+];
+
+const allProjects = Array.from({ length: 150 }, (_, i) => {
+  const imageName = imagePool[i % imagePool.length];
+  return {
+    id: i + 1,
+    slug: projectNames[i % projectNames.length].toLowerCase().replace(/ /g, '-'),
+    title: projectNames[i % projectNames.length],
+    client: clients[i % clients.length],
+    category: ['commercial', 'fashion', 'music', 'editorial', 'documentary'][i % 5],
+    cover: `/media/images/${imageName}-cover.webp`,
+    thumb: `/media/images/${imageName}-thumb.webp`,
+    hasVideo: i % 3 === 0,
+    year: 2020 + (i % 5),
+    featured: i % 7 === 0
+  };
+});
+---
+
+<BaseLayout title="Portfolio — Loyal Bliss Productions">
+  <Navigation />
+  
+  <main class="pt-20">
+    <ProjectGrid projects={allProjects} client:load />
+  </main>
+</BaseLayout>
