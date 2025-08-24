@@ -1,0 +1,170 @@
+[
+  {
+    "id": "ianvaz18-0",
+    "username": "ianvaz18",
+    "image": "/team/ianvaz18/photos/proyecto-nike.jpg",
+    "caption": "Nike Commercial BTS",
+    "type": "commercial"
+  },
+  {
+    "id": "ianvaz18-1",
+    "username": "ianvaz18",
+    "image": "/team/ianvaz18/photos/proyecto-corona.jpg",
+    "caption": "Corona Beach Shoot",
+    "type": "production"
+  },
+  {
+    "id": "ianvaz18-2",
+    "username": "ianvaz18",
+    "image": "/team/ianvaz18/photos/proyecto-fashion.jpg",
+    "caption": "Vogue Fashion Film",
+    "type": "fashion"
+  },
+  {
+    "id": "ianvaz18-3",
+    "username": "ianvaz18",
+    "image": "/team/ianvaz18/photos/proyecto-music.jpg",
+    "caption": "Music Video Production",
+    "type": "music"
+  },
+  {
+    "id": "ianvaz18-4",
+    "username": "ianvaz18",
+    "image": "/team/ianvaz18/photos/proyecto-commercial.jpg",
+    "caption": "Mercedes-Benz Ad",
+    "type": "production"
+  },
+  {
+    "id": "ianvaz18-5",
+    "username": "ianvaz18",
+    "image": "/team/ianvaz18/photos/proyecto-netflix.jpg",
+    "caption": "Netflix Documentary",
+    "type": "production"
+  },
+  {
+    "id": "ricargorres-0",
+    "username": "ricargorres",
+    "image": "/team/ricargorres/photos/lighting-setup.jpg",
+    "caption": "Lighting Setup for Commercial",
+    "type": "commercial"
+  },
+  {
+    "id": "ricargorres-1",
+    "username": "ricargorres",
+    "image": "/team/ricargorres/photos/camera-rig.jpg",
+    "caption": "RED Camera Rig",
+    "type": "production"
+  },
+  {
+    "id": "ricargorres-2",
+    "username": "ricargorres",
+    "image": "/team/ricargorres/photos/cinematography.jpg",
+    "caption": "Anamorphic Look",
+    "type": "production"
+  },
+  {
+    "id": "ricargorres-3",
+    "username": "ricargorres",
+    "image": "/team/ricargorres/photos/bts-shoot.jpg",
+    "caption": "Behind The Scenes",
+    "type": "production"
+  },
+  {
+    "id": "ricargorres-4",
+    "username": "ricargorres",
+    "image": "/team/ricargorres/photos/arri-alexa.jpg",
+    "caption": "ARRI Alexa Setup",
+    "type": "production"
+  },
+  {
+    "id": "ricargorres-5",
+    "username": "ricargorres",
+    "image": "/team/ricargorres/photos/color-grading.jpg",
+    "caption": "Color Grading Session",
+    "type": "production"
+  },
+  {
+    "id": "angelupv-0",
+    "username": "angelupv",
+    "image": "/team/angelupv/photos/production-planning.jpg",
+    "caption": "Production Planning",
+    "type": "production"
+  },
+  {
+    "id": "angelupv-1",
+    "username": "angelupv",
+    "image": "/team/angelupv/photos/location-scout.jpg",
+    "caption": "Location Scouting",
+    "type": "production"
+  },
+  {
+    "id": "angelupv-2",
+    "username": "angelupv",
+    "image": "/team/angelupv/photos/crew-meeting.jpg",
+    "caption": "Crew Meeting",
+    "type": "production"
+  },
+  {
+    "id": "angelupv-3",
+    "username": "angelupv",
+    "image": "/team/angelupv/photos/set-design.jpg",
+    "caption": "Set Design Process",
+    "type": "production"
+  },
+  {
+    "id": "angelupv-4",
+    "username": "angelupv",
+    "image": "/team/angelupv/photos/call-sheet.jpg",
+    "caption": "Production Call Sheet",
+    "type": "production"
+  },
+  {
+    "id": "angelupv-5",
+    "username": "angelupv",
+    "image": "/team/angelupv/photos/equipment.jpg",
+    "caption": "Equipment Preparation",
+    "type": "production"
+  },
+  {
+    "id": "kikejd-0",
+    "username": "kikejd",
+    "image": "/team/kikejd/photos/editing-suite.jpg",
+    "caption": "Editing Suite Setup",
+    "type": "production"
+  },
+  {
+    "id": "kikejd-1",
+    "username": "kikejd",
+    "image": "/team/kikejd/photos/color-correction.jpg",
+    "caption": "Color Correction",
+    "type": "production"
+  },
+  {
+    "id": "kikejd-2",
+    "username": "kikejd",
+    "image": "/team/kikejd/photos/davinci-resolve.jpg",
+    "caption": "DaVinci Resolve Workflow",
+    "type": "production"
+  },
+  {
+    "id": "kikejd-3",
+    "username": "kikejd",
+    "image": "/team/kikejd/photos/post-production.jpg",
+    "caption": "Post Production",
+    "type": "production"
+  },
+  {
+    "id": "kikejd-4",
+    "username": "kikejd",
+    "image": "/team/kikejd/photos/timeline.jpg",
+    "caption": "Timeline Editing",
+    "type": "production"
+  },
+  {
+    "id": "kikejd-5",
+    "username": "kikejd",
+    "image": "/team/kikejd/photos/final-cut.jpg",
+    "caption": "Final Cut Export",
+    "type": "production"
+  }
+]

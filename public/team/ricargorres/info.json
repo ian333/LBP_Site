@@ -1,0 +1,43 @@
+{
+  "username": "ricargorres",
+  "name": "Ricardo Gorres",
+  "role": "DP",
+  "bio": "DP en Loyal Bliss Productions",
+  "posts": [
+    {
+      "image": "/team/ricargorres/photos/lighting-setup.jpg",
+      "caption": "Lighting Setup for Commercial",
+      "date": "2025-08-09T03:33:04.273Z"
+    },
+    {
+      "image": "/team/ricargorres/photos/camera-rig.jpg",
+      "caption": "RED Camera Rig",
+      "date": "2025-08-12T00:19:40.958Z"
+    },
+    {
+      "image": "/team/ricargorres/photos/cinematography.jpg",
+      "caption": "Anamorphic Look",
+      "date": "2025-08-07T21:03:47.396Z"
+    },
+    {
+      "image": "/team/ricargorres/photos/bts-shoot.jpg",
+      "caption": "Behind The Scenes",
+      "date": "2025-07-28T07:38:29.691Z"
+    },
+    {
+      "image": "/team/ricargorres/photos/arri-alexa.jpg",
+      "caption": "ARRI Alexa Setup",
+      "date": "2025-08-04T02:40:45.221Z"
+    },
+    {
+      "image": "/team/ricargorres/photos/color-grading.jpg",
+      "caption": "Color Grading Session",
+      "date": "2025-08-09T19:15:20.006Z"
+    }
+  ],
+  "stats": {
+    "posts": 212,
+    "followers": 5318,
+    "following": 1034
+  }
+}

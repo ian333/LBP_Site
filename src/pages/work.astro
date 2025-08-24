@@ -45,6 +45,7 @@ const clients = [
   'Dua Lipa', 'Olivia Rodrigo', 'Taylor Swift', 'Ariana Grande', 'Post Malone'
 ];
 
+// Mix de imágenes: stock + contenido real del equipo
 const imagePool = [
   'cinema-1', 'cinema-2', 'cinema-3', 'cinema-4', 'cinema-5', 'cinema-6',
   'fashion-1', 'fashion-2', 'fashion-3', 'fashion-4', 'fashion-5',
@@ -58,21 +59,104 @@ const imagePool = [
   'vibrant-1', 'vibrant-2', 'vibrant-3', 'vibrant-4'
 ];
 
-const allProjects = Array.from({ length: 150 }, (_, i) => {
-  const imageName = imagePool[i % imagePool.length];
+// Proyectos reales del equipo
+const realProjects = [
+  { 
+    id: 'ian-1',
+    slug: 'commercial-nike-2024',
+    title: 'Nike: Movement',
+    client: 'Nike México',
+    category: 'commercial',
+    cover: '/team/ianvaz18/photos/post_1.jpg',
+    thumb: '/team/ianvaz18/photos/post_1.jpg',
+    hasVideo: true,
+    year: 2024,
+    featured: true,
+    director: 'Ian Vaz'
+  },
+  {
+    id: 'ricardo-1',
+    slug: 'fashion-vogue-mx',
+    title: 'Vogue Editorial',
+    client: 'Vogue México',
+    category: 'fashion',
+    cover: '/team/ricargorres/photos/post_2.jpg',
+    thumb: '/team/ricargorres/photos/post_2.jpg',
+    hasVideo: false,
+    year: 2024,
+    featured: true,
+    dp: 'Ricardo Gorres'
+  },
+  {
+    id: 'angel-1',
+    slug: 'music-video-production',
+    title: 'Neon Dreams',
+    client: 'Independent Artist',
+    category: 'music',
+    cover: '/team/angelupv/photos/post_3.jpg',
+    thumb: '/team/angelupv/photos/post_3.jpg',
+    hasVideo: true,
+    year: 2024,
+    featured: true,
+    producer: 'Angel UPV'
+  },
+  {
+    id: 'kike-1',
+    slug: 'post-production-showreel',
+    title: 'Color Grading Reel',
+    client: 'Loyal Bliss',
+    category: 'editorial',
+    cover: '/team/kikejd/photos/post_4.jpg',
+    thumb: '/team/kikejd/photos/post_4.jpg',
+    hasVideo: true,
+    year: 2024,
+    featured: true,
+    editor: 'Kike JD'
+  }
+];
+
+// Usar imágenes reales del equipo para más proyectos
+const teamImages = [
+  '/team/ianvaz18/photos/post_1.jpg',
+  '/team/ianvaz18/photos/post_2.jpg',
+  '/team/ianvaz18/photos/post_3.jpg',
+  '/team/ianvaz18/photos/post_4.jpg',
+  '/team/ianvaz18/photos/post_5.jpg',
+  '/team/ricargorres/photos/post_1.jpg',
+  '/team/ricargorres/photos/post_2.jpg',
+  '/team/ricargorres/photos/post_3.jpg',
+  '/team/ricargorres/photos/post_4.jpg',
+  '/team/angelupv/photos/post_1.jpg',
+  '/team/angelupv/photos/post_2.jpg',
+  '/team/angelupv/photos/post_3.jpg',
+  '/team/kikejd/photos/post_1.jpg',
+  '/team/kikejd/photos/post_2.jpg',
+  '/team/kikejd/photos/post_3.jpg',
+];
+
+// Crear solo 26 proyectos adicionales (más realista)
+const additionalProjects = Array.from({ length: 26 }, (_, i) => {
+  const useTeamImage = i < teamImages.length;
+  const image = useTeamImage 
+    ? teamImages[i] 
+    : `/media/images/${imagePool[i % imagePool.length]}-cover.webp`;
+    
   return {
-    id: i + 1,
+    id: `project-${i + 5}`,
     slug: projectNames[i % projectNames.length].toLowerCase().replace(/ /g, '-'),
     title: projectNames[i % projectNames.length],
     client: clients[i % clients.length],
     category: ['commercial', 'fashion', 'music', 'editorial', 'documentary'][i % 5],
-    cover: `/media/images/${imageName}-cover.webp`,
-    thumb: `/media/images/${imageName}-thumb.webp`,
+    cover: image,
+    thumb: image,
     hasVideo: i % 3 === 0,
     year: 2020 + (i % 5),
     featured: i % 7 === 0
   };
 });
+
+// Total: 30 proyectos (4 reales + 26 adicionales)
+const allProjects = [...realProjects, ...additionalProjects];
 ---
 
 <BaseLayout title="Portfolio — Loyal Bliss Productions">

@@ -56,7 +56,7 @@ export default function Hero({ videoSrc, imageSrc, title, subtitle }) {
               Ver portfolio
             </a>
             <a
-              href="https://wa.me/5215512345678?text=Hola,%20me%20interesa%20trabajar%20con%20ustedes"
+              href="https://wa.me/5215573633622?text=Hola,%20me%20interesa%20trabajar%20con%20Loyal%20Bliss"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-3 border border-bone/20 rounded-full hover:bg-white/10 transition-all"

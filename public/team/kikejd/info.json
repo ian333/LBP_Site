@@ -1,0 +1,43 @@
+{
+  "username": "kikejd",
+  "name": "Kike JD",
+  "role": "Editor",
+  "bio": "Editor en Loyal Bliss Productions",
+  "posts": [
+    {
+      "image": "/team/kikejd/photos/editing-suite.jpg",
+      "caption": "Editing Suite Setup",
+      "date": "2025-08-10T11:51:33.938Z"
+    },
+    {
+      "image": "/team/kikejd/photos/color-correction.jpg",
+      "caption": "Color Correction",
+      "date": "2025-08-16T18:43:56.620Z"
+    },
+    {
+      "image": "/team/kikejd/photos/davinci-resolve.jpg",
+      "caption": "DaVinci Resolve Workflow",
+      "date": "2025-08-15T07:09:10.762Z"
+    },
+    {
+      "image": "/team/kikejd/photos/post-production.jpg",
+      "caption": "Post Production",
+      "date": "2025-08-08T11:00:51.915Z"
+    },
+    {
+      "image": "/team/kikejd/photos/timeline.jpg",
+      "caption": "Timeline Editing",
+      "date": "2025-07-29T06:42:27.864Z"
+    },
+    {
+      "image": "/team/kikejd/photos/final-cut.jpg",
+      "caption": "Final Cut Export",
+      "date": "2025-07-28T12:52:25.928Z"
+    }
+  ],
+  "stats": {
+    "posts": 127,
+    "followers": 9203,
+    "following": 886
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "username": "ianvaz18",
+  "name": "Ian Vaz",
+  "role": "Director",
+  "bio": "Director en Loyal Bliss Productions",
+  "posts": [
+    {
+      "image": "/team/ianvaz18/photos/proyecto-nike.jpg",
+      "caption": "Nike Commercial BTS",
+      "date": "2025-08-16T10:18:03.460Z"
+    },
+    {
+      "image": "/team/ianvaz18/photos/proyecto-corona.jpg",
+      "caption": "Corona Beach Shoot",
+      "date": "2025-08-10T21:58:23.955Z"
+    },
+    {
+      "image": "/team/ianvaz18/photos/proyecto-fashion.jpg",
+      "caption": "Vogue Fashion Film",
+      "date": "2025-08-18T01:46:20.148Z"
+    },
+    {
+      "image": "/team/ianvaz18/photos/proyecto-music.jpg",
+      "caption": "Music Video Production",
+      "date": "2025-08-12T20:06:04.284Z"
+    },
+    {
+      "image": "/team/ianvaz18/photos/proyecto-commercial.jpg",
+      "caption": "Mercedes-Benz Ad",
+      "date": "2025-08-19T22:23:21.610Z"
+    },
+    {
+      "image": "/team/ianvaz18/photos/proyecto-netflix.jpg",
+      "caption": "Netflix Documentary",
+      "date": "2025-08-20T21:41:44.294Z"
+    }
+  ],
+  "stats": {
+    "posts": 152,
+    "followers": 14288,
+    "following": 1147
+  }
+}

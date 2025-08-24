@@ -1,0 +1,43 @@
+{
+  "username": "angelupv",
+  "name": "Angel UPV",
+  "role": "Producer",
+  "bio": "Producer en Loyal Bliss Productions",
+  "posts": [
+    {
+      "image": "/team/angelupv/photos/production-planning.jpg",
+      "caption": "Production Planning",
+      "date": "2025-08-03T09:43:57.472Z"
+    },
+    {
+      "image": "/team/angelupv/photos/location-scout.jpg",
+      "caption": "Location Scouting",
+      "date": "2025-08-21T06:37:56.160Z"
+    },
+    {
+      "image": "/team/angelupv/photos/crew-meeting.jpg",
+      "caption": "Crew Meeting",
+      "date": "2025-08-16T12:19:51.557Z"
+    },
+    {
+      "image": "/team/angelupv/photos/set-design.jpg",
+      "caption": "Set Design Process",
+      "date": "2025-08-15T23:44:02.196Z"
+    },
+    {
+      "image": "/team/angelupv/photos/call-sheet.jpg",
+      "caption": "Production Call Sheet",
+      "date": "2025-08-17T23:31:51.862Z"
+    },
+    {
+      "image": "/team/angelupv/photos/equipment.jpg",
+      "caption": "Equipment Preparation",
+      "date": "2025-08-14T22:30:33.253Z"
+    }
+  ],
+  "stats": {
+    "posts": 311,
+    "followers": 10301,
+    "following": 881
+  }
+}
