@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navigation from '../../components/Navigation.astro';
+
+const posts = await Astro.glob('./*.mdx');
+const sortedPosts = posts
+  .filter(post => post.file !== '/home/ian/Projects/Loyalbliss/src/pages/blog/index.astro')
+  .sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
+
+const categories = [
+  { id: 'all', label: 'Todo', icon: '📚' },
+  { id: 'lenses', label: 'Lentes', icon: '📷' },
+  { id: 'lighting', label: 'Iluminación', icon: '💡' },
+  { id: 'gear', label: 'Equipo', icon: '🎬' },
+  { id: 'tutorial', label: 'Tutoriales', icon: '🎓' },
+  { id: 'tips', label: 'Tips', icon: '💎' }
+];
+---
+
+<BaseLayout title="Blog Técnico — Loyal Bliss Productions">
+  <Navigation />
+  
+  <main class="pt-20 min-h-screen">
+    <section class="py-16 px-6">
+      <div class="max-w-7xl mx-auto">
+        {/* Header */}
+        <div class="text-center mb-16">
+          <h1 class="font-display text-4xl md:text-5xl font-bold mb-4">Blog Técnico</h1>
+          <p class="text-lg text-bone/70 max-w-3xl mx-auto">
+            Guías profesionales, comparativas de equipo y secretos de cinematografía que usamos en nuestras producciones
+          </p>
+        </div>
+        
+        {/* Categories */}
+        <div class="flex flex-wrap justify-center gap-3 mb-12">
+          {categories.map(cat => (
+            <button 
+              data-category={cat.id}
+              class="category-filter px-5 py-2 bg-white/5 hover:bg-gold hover:text-coal rounded-full text-sm font-medium transition-all flex items-center gap-2"
+            >
+              <span>{cat.icon}</span>
+              {cat.label}
+            </button>
+          ))}
+        </div>
+        
+        {/* Blog Grid */}
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {sortedPosts.map((post) => (
+            <article class="group bg-white/5 rounded-2xl overflow-hidden hover:bg-white/10 transition-all">
+              {post.frontmatter.image && (
+                <div class="aspect-video overflow-hidden">
+                  <img 
+                    src={post.frontmatter.image} 
+                    alt={post.frontmatter.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              )}
+              
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="text-xs bg-gold/20 text-gold px-3 py-1 rounded-full">
+                    {post.frontmatter.category}
+                  </span>
+                  <span class="text-xs text-bone/50">
+                    {new Date(post.frontmatter.date).toLocaleDateString('es-MX', { 
+                      year: 'numeric', 
+                      month: 'short', 
+                      day: 'numeric' 
+                    })}
+                  </span>
+                </div>
+                
+                <h2 class="font-display text-xl font-semibold mb-2 group-hover:text-gold transition-colors">
+                  <a href={post.url}>{post.frontmatter.title}</a>
+                </h2>
+                
+                <p class="text-bone/70 text-sm mb-4 line-clamp-3">
+                  {post.frontmatter.excerpt}
+                </p>
+                
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-bone/50">{post.frontmatter.readTime}</span>
+                  <a 
+                    href={post.url}
+                    class="text-gold text-sm hover:text-gold/80 transition-colors flex items-center gap-1"
+                  >
+                    Leer más
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <script>
+    const filters = document.querySelectorAll('.category-filter');
+    filters.forEach(filter => {
+      filter.addEventListener('click', () => {
+        const category = filter.dataset.category;
+        // Aquí implementarías el filtrado
+        console.log('Filter by:', category);
+      });
+    });
+  </script>
+</BaseLayout>

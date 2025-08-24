@@ -1,0 +1,291 @@
+---
+title: "Tutorial: Iluminación de 3 Puntos para Entrevistas Cinematográficas"
+excerpt: "Aprende a crear setups de iluminación profesional con cualquier presupuesto. Desde LEDs básicos hasta Arri."
+date: "2024-01-20"
+category: "tutorial"
+image: "/media/images/portrait-1-cover.webp"
+readTime: "12 min lectura"
+author: "Sofia Herrera"
+---
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navigation from '../../components/Navigation.astro';
+
+<BaseLayout title={frontmatter.title}>
+<Navigation />
+
+<article class="pt-24 pb-16 px-6">
+<div class="max-w-4xl mx-auto">
+
+# {frontmatter.title}
+
+<div class="flex items-center gap-4 text-sm text-bone/60 mb-8">
+  <span>{frontmatter.date}</span>
+  <span>•</span>
+  <span>{frontmatter.readTime}</span>
+  <span>•</span>
+  <span class="text-gold">{frontmatter.category}</span>
+</div>
+
+<img src="/media/images/portrait-3-cover.webp" alt="Setup de iluminación" class="w-full rounded-2xl mb-8" />
+
+## La Base de Todo: El Sistema de 3 Puntos
+
+La iluminación de 3 puntos es el **fundamento de toda cinematografía profesional**. Dominarlo te permite crear cualquier mood, desde corporate hasta noir.
+
+### 🔦 Los Tres Elementos
+
+<div class="grid md:grid-cols-3 gap-4 my-8">
+  <div class="bg-gradient-to-br from-gold/20 to-transparent rounded-xl p-6">
+    <h3 class="font-display text-lg mb-2">1. Key Light</h3>
+    <p class="text-sm text-bone/80">Luz principal que define sombras y forma</p>
+    <p class="text-xs mt-2 text-gold">45° horizontal, 45° vertical</p>
+  </div>
+  <div class="bg-gradient-to-br from-wine/20 to-transparent rounded-xl p-6">
+    <h3 class="font-display text-lg mb-2">2. Fill Light</h3>
+    <p class="text-sm text-bone/80">Suaviza sombras del key</p>
+    <p class="text-xs mt-2 text-wine">Opuesta al key, menor intensidad</p>
+  </div>
+  <div class="bg-gradient-to-br from-blue-500/20 to-transparent rounded-xl p-6">
+    <h3 class="font-display text-lg mb-2">3. Back Light</h3>
+    <p class="text-sm text-bone/80">Separa sujeto del fondo</p>
+    <p class="text-xs mt-2 text-blue-400">Detrás, 45° arriba</p>
+  </div>
+</div>
+
+## Setup Básico ($500)
+
+### Equipo Necesario:
+- **2x Neewer 660 LED** ($150 c/u)
+- **1x Godox SL-60W** ($150)
+- **Stands básicos** ($50)
+
+### Diagrama de Posicionamiento:
+
+```
+         [BACK LIGHT]
+              ↓
+         [SUJETO]
+        ↙        ↘
+   [KEY]          [FILL]
+     📹 [CÁMARA]
+```
+
+### Configuración Paso a Paso:
+
+<div class="bg-white/5 rounded-xl p-6 my-6">
+  <h4 class="font-semibold mb-4">📍 Paso 1: Posiciona el Key Light</h4>
+  <ul class="space-y-2 text-sm">
+    <li>• Coloca a 45° del sujeto (lado dominante del rostro)</li>
+    <li>• Altura: 45° sobre el nivel de ojos</li>
+    <li>• Distancia: 1.5-2 metros</li>
+    <li>• Potencia: 60-70%</li>
+    <li>• Temperatura: 5600K (daylight)</li>
+  </ul>
+</div>
+
+<div class="bg-white/5 rounded-xl p-6 my-6">
+  <h4 class="font-semibold mb-4">📍 Paso 2: Agrega el Fill Light</h4>
+  <ul class="space-y-2 text-sm">
+    <li>• Opuesto al key (otro lado de cámara)</li>
+    <li>• Altura: nivel de ojos o ligeramente bajo</li>
+    <li>• Distancia: 2-2.5 metros</li>
+    <li>• Potencia: 30-40% (mitad del key)</li>
+    <li>• Difusión: usa papel difusor o bounce</li>
+  </ul>
+</div>
+
+<div class="bg-white/5 rounded-xl p-6 my-6">
+  <h4 class="font-semibold mb-4">📍 Paso 3: Coloca el Back Light</h4>
+  <ul class="space-y-2 text-sm">
+    <li>• Detrás del sujeto, fuera de cuadro</li>
+    <li>• Altura: 45° sobre la cabeza</li>
+    <li>• Apuntando a hombros/cabello</li>
+    <li>• Potencia: 50-80% (según el look)</li>
+    <li>• Color: puedes usar geles (azul/ámbar)</li>
+  </ul>
+</div>
+
+## Ratios de Iluminación (El Secreto del Mood)
+
+<div class="overflow-x-auto my-8">
+<table class="w-full text-sm">
+  <thead>
+    <tr class="border-b border-white/20">
+      <th class="text-left py-3">Ratio</th>
+      <th class="text-center py-3">Key:Fill</th>
+      <th class="text-center py-3">Mood</th>
+      <th class="text-center py-3">Uso</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-white/10">
+      <td class="py-3 font-semibold">1:1</td>
+      <td class="text-center">100%:100%</td>
+      <td class="text-center">Flat/Comedy</td>
+      <td class="text-center">Sitcoms, YouTube</td>
+    </tr>
+    <tr class="border-b border-white/10">
+      <td class="py-3 font-semibold">2:1</td>
+      <td class="text-center">100%:50%</td>
+      <td class="text-center">Natural</td>
+      <td class="text-center">Entrevistas, Corporate</td>
+    </tr>
+    <tr class="border-b border-white/10">
+      <td class="py-3 font-semibold">4:1</td>
+      <td class="text-center">100%:25%</td>
+      <td class="text-center">Dramático</td>
+      <td class="text-center">Cine, Documentales</td>
+    </tr>
+    <tr class="border-b border-white/10">
+      <td class="py-3 font-semibold">8:1</td>
+      <td class="text-center">100%:12%</td>
+      <td class="text-center">Film Noir</td>
+      <td class="text-center">Thriller, Horror</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+## Modificadores: El Arte de Esculpir la Luz
+
+### 🔲 Softbox vs Umbrella vs Fresnel
+
+<div class="grid md:grid-cols-3 gap-4 my-8">
+  <div class="bg-white/5 rounded-xl p-4">
+    <img src="/media/images/abstract-1-cover.webp" alt="Softbox" class="w-full h-32 object-cover rounded-lg mb-3" />
+    <h4 class="font-semibold mb-2">Softbox</h4>
+    <p class="text-xs">Luz suave y direccional</p>
+    <p class="text-xs text-gold mt-1">Ideal para: Beauty, Entrevistas</p>
+  </div>
+  <div class="bg-white/5 rounded-xl p-4">
+    <img src="/media/images/abstract-2-cover.webp" alt="Umbrella" class="w-full h-32 object-cover rounded-lg mb-3" />
+    <h4 class="font-semibold mb-2">Umbrella</h4>
+    <p class="text-xs">Luz amplia y envolvente</p>
+    <p class="text-xs text-gold mt-1">Ideal para: Grupos, Fill general</p>
+  </div>
+  <div class="bg-white/5 rounded-xl p-4">
+    <img src="/media/images/abstract-3-cover.webp" alt="Fresnel" class="w-full h-32 object-cover rounded-lg mb-3" />
+    <h4 class="font-semibold mb-2">Fresnel</h4>
+    <p class="text-xs">Luz dura y enfocada</p>
+    <p class="text-xs text-gold mt-1">Ideal para: Spot, Acento</p>
+  </div>
+</div>
+
+## Setups Avanzados por Género
+
+### 🎬 Setup Corporate/LinkedIn
+
+```
+Equipo:
+- Key: Aputure 300D II + Softbox 90cm
+- Fill: Bounce 5-en-1 (lado plateado)
+- Back: Aputure MC RGB (azul corporativo)
+- Fondo: 2x Quasar Tubes verticales
+
+Settings:
+- Key: 5600K, 70% potencia
+- Fill: Bounce natural
+- Back: 6500K o RGB azul
+- Ratio: 2:1
+```
+
+<div class="bg-gradient-to-r from-gold/10 to-transparent rounded-xl p-6 my-6">
+  <h4 class="text-gold mb-3">💡 Pro Tip</h4>
+  <p class="text-sm">Para look LinkedIn premium, agrega un **eye light** pequeño (Aputure MC) justo debajo del lente. Crea un catchlight perfecto que hace los ojos "pop".</p>
+</div>
+
+### 🎭 Setup Dramático/Cine
+
+```
+Equipo:
+- Key: Arri Skypanel S30 + Grid
+- Fill: Neg fill (tela negra)
+- Back: Dedolight con snoot
+- Práctica: Haze machine ligera
+
+Settings:
+- Key: 3200K (tungsten mood)
+- Fill: Negativo (absorbe luz)
+- Back: 5600K (contraste de color)
+- Ratio: 6:1 o mayor
+```
+
+### 🌈 Setup Creativo/Musical
+
+```
+Equipo:
+- Key: Godox SL-200 + CTO gel
+- Fill: RGB panel (color complementario)
+- Back: 2x Astera Tubes programables
+- Ambiente: Proyector con gobos
+
+Settings:
+- Key: 2800K ultra warm
+- Fill: RGB cyan/magenta
+- Back: Animación de colores
+- Ratio: Variable con música
+```
+
+## Problemas Comunes y Soluciones
+
+<div class="space-y-4 my-8">
+  <div class="bg-red-500/10 border border-red-500/30 rounded-xl p-4">
+    <h4 class="text-red-400 font-semibold mb-2">❌ Problema: Sombras duras en la nariz</h4>
+    <p class="text-sm">✓ Solución: Baja el key light o acércalo al eje de cámara</p>
+  </div>
+  <div class="bg-red-500/10 border border-red-500/30 rounded-xl p-4">
+    <h4 class="text-red-400 font-semibold mb-2">❌ Problema: Ojos sin vida (raccoon eyes)</h4>
+    <p class="text-sm">✓ Solución: Agrega eye light o sube el fill</p>
+  </div>
+  <div class="bg-red-500/10 border border-red-500/30 rounded-xl p-4">
+    <h4 class="text-red-400 font-semibold mb-2">❌ Problema: Spill de color en paredes</h4>
+    <p class="text-sm">✓ Solución: Usa flags/barn doors para controlar el derrame</p>
+  </div>
+  <div class="bg-red-500/10 border border-red-500/30 rounded-xl p-4">
+    <h4 class="text-red-400 font-semibold mb-2">❌ Problema: Mezcla de temperaturas</h4>
+    <p class="text-sm">✓ Solución: Geles CTO/CTB o ajusta WB en cámara</p>
+  </div>
+</div>
+
+## Medición de Luz: Apps y Herramientas
+
+### 📱 Apps Recomendadas:
+- **Cine Meter II** ($30) - Medidor profesional
+- **Light Meter** (gratis) - Básico pero funcional
+- **Cadrage** ($10) - Director's viewfinder con luz
+
+### 🎯 Valores de Referencia:
+- **Entrevista interior:** 200-400 lux
+- **Exterior nublado:** 1000-2000 lux
+- **Pleno sol:** 10,000+ lux
+
+## Ejercicio Práctico
+
+<div class="bg-gradient-to-br from-gold/20 to-wine/20 rounded-xl p-6 my-8">
+  <h3 class="font-display text-xl mb-4">🎯 Reto de 1 Hora</h3>
+  <p class="mb-4">Crea 3 moods diferentes con el mismo setup:</p>
+  <ol class="space-y-3 text-sm">
+    <li><strong>1. Morning Interview:</strong> 5600K, ratio 2:1, fill bounce</li>
+    <li><strong>2. Golden Hour:</strong> 3200K + CTO, ratio 3:1, warm back</li>
+    <li><strong>3. Night Drama:</strong> 4300K, ratio 8:1, blue back light</li>
+  </ol>
+  <p class="text-xs mt-4 text-gold">Comparte tus resultados con #LoyalBlissLighting</p>
+</div>
+
+## Conclusión
+
+La iluminación de 3 puntos es como aprender acordes en guitarra: una vez que los dominas, puedes tocar cualquier canción. **Practica estos setups** hasta que sean segunda naturaleza, luego rómpelos creativamente.
+
+Recuerda: **La mejor luz es la que cuenta tu historia**, no la más cara.
+
+---
+
+### 📚 Recursos Adicionales
+- [Descarga nuestro **Lighting Plot PDF**](/resources/lighting-plot.pdf)
+- [Video tutorial en nuestro canal](https://youtube.com/loyalbliss)
+- [Siguiente: Color Grading con DaVinci](/blog/color-grading-davinci)
+
+</div>
+</article>
+</BaseLayout>
