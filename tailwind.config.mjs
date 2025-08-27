@@ -4,10 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        coal: '#0a0a0a',
-        bone: '#faf8f6',
-        gold: '#d4af37',
-        wine: '#722f37'
+        coal: '#000000',      // Pure black
+        bone: '#ffffff',      // Pure white for contrast
+        gold: '#d4af37',      // Gold accent
+        wine: '#722f37',      // Wine red
+        'dark-gray': '#111111',
+        'medium-gray': '#333333',
+        'light-gray': '#666666'
       },
       fontFamily: {
         display: ['Cinzel', 'serif'],

@@ -1,180 +1,272 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navigation from '../components/Navigation.astro';
-import Hero from '../components/Hero.jsx';
-import ProjectGrid from '../components/ProjectGrid.jsx';
-import YouTubeSection from '../components/YouTubeSection.jsx';
-
-// Demo data - reemplazar con tu contenido real
-const featuredProjects = [
-  {
-    id: 1,
-    slug: 'comercial-nike',
-    title: 'Nike: Unlimited',
-    client: 'Nike',
-    category: 'commercial',
-    cover: '/media/images/cinema-1-cover.webp',
-    thumb: '/media/images/cinema-1-thumb.webp',
-    hasVideo: true
-  },
-  {
-    id: 2,
-    slug: 'fashion-vogue',
-    title: 'Vogue Editorial',
-    client: 'Vogue México',
-    category: 'fashion',
-    cover: '/media/images/fashion-1-cover.webp',
-    thumb: '/media/images/fashion-1-thumb.webp'
-  },
-  {
-    id: 3,
-    slug: 'music-rosalia',
-    title: 'Saoko',
-    client: 'Rosalía',
-    category: 'music',
-    cover: '/media/images/neon-1-cover.webp',
-    thumb: '/media/images/neon-1-thumb.webp',
-    hasVideo: true
-  },
-  {
-    id: 4,
-    slug: 'commercial-corona',
-    title: 'Corona: Paradise',
-    client: 'Corona',
-    category: 'commercial',
-    cover: '/media/images/ocean-1-cover.webp',
-    thumb: '/media/images/ocean-1-thumb.webp',
-    hasVideo: true
-  },
-  {
-    id: 5,
-    slug: 'editorial-gq',
-    title: 'GQ Style',
-    client: 'GQ México',
-    category: 'editorial',
-    cover: '/media/images/portrait-1-cover.webp',
-    thumb: '/media/images/portrait-1-thumb.webp'
-  },
-  {
-    id: 6,
-    slug: 'music-bad-bunny',
-    title: 'Yo Perreo Sola',
-    client: 'Bad Bunny',
-    category: 'music',
-    cover: '/media/images/cinema-2-cover.webp',
-    thumb: '/media/images/cinema-2-thumb.webp',
-    hasVideo: true
-  }
-];
+import DarkHero from '../components/DarkHero.jsx';
+import CinematicGallery from '../components/CinematicGallery.jsx';
 ---
 
 <BaseLayout>
   <Navigation />
   
-  <Hero 
-    videoSrc="/media/demo/ocean-waves.mp4"
-    imageSrc="/media/images/cinema-1-cover.webp"
-    title="LOYAL BLISS"
-    subtitle="Cinematografía de alta gama. Comerciales que trascienden."
-    client:load
-  />
+  <!-- Hero Section con DarkHero Component -->
+  <DarkHero client:load />
   
-  <!-- Featured Work Section -->
-  <section class="py-24 px-6 bg-coal">
-    <div class="max-w-7xl mx-auto">
-      <div class="flex items-end justify-between mb-12">
+  <!-- Portfolio Gallery con CinematicGallery Component -->
+  <CinematicGallery client:load />
+  
+  <!-- Behind The Scenes Collage - Enhanced -->
+  <section class="relative bg-black py-24 overflow-hidden">
+    <!-- Subtle background pattern -->
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('/dark/grain-dark-1.jpg'); background-size: 200px;"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-6 relative">
+      <!-- Header with glitch effect -->
+      <div class="mb-20 text-center relative">
+        <h2 class="font-display text-5xl md:text-7xl font-black text-white tracking-tight relative">
+          <span class="relative z-10">BEHIND THE</span>
+          <span class="block text-gold relative z-10 mt-2">SCENES</span>
+          
+          <!-- Glitch overlay -->
+          <span class="absolute inset-0 font-display text-5xl md:text-7xl font-black tracking-tight text-red-500/20 animate-pulse">
+            BEHIND THE<br/>SCENES
+          </span>
+        </h2>
+        
+        <!-- Decorative lines -->
+        <div class="flex items-center justify-center mt-8 gap-4">
+          <div class="h-px w-24 bg-gradient-to-r from-transparent to-gold"></div>
+          <div class="w-2 h-2 bg-gold rotate-45"></div>
+          <div class="h-px w-24 bg-gradient-to-l from-transparent to-gold"></div>
+        </div>
+      </div>
+      
+      <!-- Enhanced Masonry Grid with hover effects -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="space-y-6">
+          <div class="group relative overflow-hidden">
+            <img src="/dark/bts-dark-1.jpg" alt="Behind the scenes" class="w-full h-48 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-4 left-4 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              SETUP
+            </div>
+          </div>
+          
+          <div class="group relative overflow-hidden">
+            <img src="/dark/camera-dark-1.jpg" alt="Professional camera" class="w-full h-64 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-4 left-4 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              RED DRAGON
+            </div>
+          </div>
+          
+          <div class="group relative overflow-hidden">
+            <img src="/dark/portrait-dark-3.jpg" alt="Portrait session" class="w-full h-56 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-4 left-4 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              PORTRAIT
+            </div>
+          </div>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="group relative overflow-hidden">
+            <img src="/dark/lens-dark-1.jpg" alt="Camera lens" class="w-full h-56 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-4 left-4 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              ZEISS LENS
+            </div>
+          </div>
+          
+          <div class="group relative overflow-hidden">
+            <img src="/dark/atmosphere-dark-1.jpg" alt="Atmospheric lighting" class="w-full h-48 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-4 left-4 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              ATMOSPHERE
+            </div>
+          </div>
+          
+          <div class="group relative overflow-hidden">
+            <img src="/dark/abstract-dark-1.jpg" alt="Abstract composition" class="w-full h-60 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-4 left-4 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              ABSTRACT
+            </div>
+          </div>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="group relative overflow-hidden">
+            <img src="/dark/red-camera-dark.jpg" alt="RED camera setup" class="w-full h-64 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-4 left-4 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              RED SETUP
+            </div>
+          </div>
+          
+          <div class="group relative overflow-hidden">
+            <img src="/dark/smoke-dark-1.jpg" alt="Smoke effects" class="w-full h-44 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-4 left-4 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              FX SMOKE
+            </div>
+          </div>
+          
+          <div class="group relative overflow-hidden">
+            <img src="/dark/portrait-dark-4.jpg" alt="Dark portrait" class="w-full h-52 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-4 left-4 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              DARK MOOD
+            </div>
+          </div>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="group relative overflow-hidden">
+            <img src="/dark/gimbal-dark-1.jpg" alt="Gimbal stabilizer" class="w-full h-52 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-4 left-4 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              GIMBAL
+            </div>
+          </div>
+          
+          <div class="group relative overflow-hidden">
+            <img src="/dark/color-dark-1.jpg" alt="Color grading" class="w-full h-60 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-4 left-4 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              COLOR
+            </div>
+          </div>
+          
+          <div class="group relative overflow-hidden">
+            <img src="/dark/fog-dark-1.jpg" alt="Fog machine effects" class="w-full h-48 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-4 left-4 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              FOG FX
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Team Dark Section -->
+  <section class="bg-black py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
         <div>
-          <h2 class="font-display text-3xl md:text-4xl font-bold mb-2">Trabajo destacado</h2>
-          <p class="text-bone/70">Nuestra selección más reciente</p>
-        </div>
-        <a href="/work" class="hidden md:inline-flex items-center text-gold hover:text-gold/80 transition-colors">
-          Ver todo
-          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-      </div>
-      
-      <ProjectGrid projects={featuredProjects} client:visible />
-    </div>
-  </section>
-  
-  <!-- YouTube Section -->
-  <YouTubeSection client:visible />
-  
-  <!-- Services Section -->
-  <section class="py-24 px-6 bg-gradient-to-b from-coal to-black">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="font-display text-3xl md:text-4xl font-bold mb-12 text-center">Servicios</h2>
-      
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all">
-          <div class="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <h3 class="font-display text-xl font-semibold mb-3">Comerciales</h3>
-          <p class="text-bone/70 text-sm leading-relaxed">
-            Spots publicitarios que conectan con tu audiencia. Narrativa visual que vende.
+          <h2 class="font-display text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">
+            EL EQUIPO
+          </h2>
+          <p class="text-gray-300 text-xl leading-relaxed mb-8">
+            Directores, DPs, productores y editores unidos por la pasión de crear imágenes que no se olvidan.
           </p>
+          <div class="grid grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-gold font-bold text-sm tracking-widest mb-2">DIRECTOR</h3>
+              <p class="text-white font-semibold">Ian Vaz</p>
+            </div>
+            <div>
+              <h3 class="text-gold font-bold text-sm tracking-widest mb-2">DP</h3>
+              <p class="text-white font-semibold">Ricardo Gorres</p>
+            </div>
+            <div>
+              <h3 class="text-gold font-bold text-sm tracking-widest mb-2">PRODUCER</h3>
+              <p class="text-white font-semibold">Angel UPV</p>
+            </div>
+            <div>
+              <h3 class="text-gold font-bold text-sm tracking-widest mb-2">EDITOR</h3>
+              <p class="text-white font-semibold">Kike JD</p>
+            </div>
+          </div>
+          <a 
+            href="/team"
+            class="inline-flex items-center text-white font-bold mt-8 hover:text-gold transition-colors"
+          >
+            CONOCER AL EQUIPO
+            <span class="ml-2">→</span>
+          </a>
         </div>
         
-        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all">
-          <div class="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
-            </svg>
-          </div>
-          <h3 class="font-display text-xl font-semibold mb-3">Music Videos</h3>
-          <p class="text-bone/70 text-sm leading-relaxed">
-            Videoclips que definen la identidad visual del artista. Creatividad sin límites.
-          </p>
-        </div>
-        
-        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all">
-          <div class="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <h3 class="font-display text-xl font-semibold mb-3">Fashion Films</h3>
-          <p class="text-bone/70 text-sm leading-relaxed">
-            Editorial en movimiento. Arte y moda fusionados en cada frame.
-          </p>
+        <div class="relative">
+          <img 
+            src="/dark/portrait-dark-1.jpg" 
+            alt="Team"
+            class="w-full aspect-[4/5] object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
         </div>
       </div>
     </div>
   </section>
   
-  <!-- CTA Section -->
-  <section class="py-24 px-6 bg-gradient-to-t from-coal to-black">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="font-display text-3xl md:text-5xl font-bold mb-6">
-        ¿Listo para crear algo extraordinario?
+  <!-- Contact CTA Dark -->
+  <section class="bg-black py-32 relative">
+    <!-- Background pattern -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: url('/dark/texture-dark-1.jpg'); background-size: 400px;"></div>
+    </div>
+    
+    <div class="max-w-4xl mx-auto text-center px-6 relative">
+      <h2 class="font-display text-5xl md:text-7xl font-black text-white mb-8 tracking-tight">
+        CRÉATE ALGO
+        <span class="text-gold block">EXTRAORDINARIO</span>
       </h2>
-      <p class="text-lg text-bone/70 mb-10">
-        Hablemos de tu próximo proyecto
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      
+      <div class="flex flex-col sm:flex-row gap-6 justify-center mt-12">
         <a
-          href="https://wa.me/5215573633622?text=Hola,%20me%20interesa%20trabajar%20con%20Loyal%20Bliss"
+          href="https://wa.me/5215573633622"
           target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center px-8 py-4 bg-gold text-coal font-semibold rounded-full hover:bg-gold/90 transition-all hover:scale-105"
+          class="px-10 py-5 bg-gold text-black font-black text-lg rounded-none hover:bg-white transition-all hover:scale-105"
         >
-          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-          </svg>
-          Contactar por WhatsApp
+          WHATSAPP AHORA
         </a>
         <a
           href="/contact"
-          class="inline-flex items-center justify-center px-8 py-4 border border-bone/20 rounded-full hover:bg-white/10 transition-all"
+          class="px-10 py-5 border-2 border-white text-white font-black text-lg rounded-none hover:bg-white hover:text-black transition-all"
         >
-          Más información
+          MÁS INFORMACIÓN
         </a>
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  /* Film grain animation */
+  @keyframes grain {
+    0%, 100% { transform: translate(0, 0) }
+    10% { transform: translate(-5%, -10%) }
+    20% { transform: translate(-10%, 5%) }
+    30% { transform: translate(5%, -25%) }
+    40% { transform: translate(-5%, 25%) }
+    50% { transform: translate(-10%, 10%) }
+    60% { transform: translate(15%, 0%) }
+    70% { transform: translate(0%, 15%) }
+    80% { transform: translate(3%, 35%) }
+    90% { transform: translate(-10%, 10%) }
+  }
+  
+  .grain-animation {
+    animation: grain 8s steps(10) infinite;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #f4d03f;
+  }
+</style>

@@ -1,0 +1,226 @@
+[
+  {
+    "id": "dark-1",
+    "filename": "dark-cinema-noir-1.jpg",
+    "path": "/dark/dark-cinema-noir-1.jpg",
+    "description": "Silhouette noir",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-2",
+    "filename": "dark-studio-1.jpg",
+    "path": "/dark/dark-studio-1.jpg",
+    "description": "Dark studio",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-3",
+    "filename": "dark-moody-1.jpg",
+    "path": "/dark/dark-moody-1.jpg",
+    "description": "Moody lighting",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-4",
+    "filename": "dark-shadows-1.jpg",
+    "path": "/dark/dark-shadows-1.jpg",
+    "description": "Deep shadows",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-5",
+    "filename": "bts-dark-1.jpg",
+    "path": "/dark/bts-dark-1.jpg",
+    "description": "BTS dark shoot",
+    "category": "bts"
+  },
+  {
+    "id": "dark-6",
+    "filename": "camera-dark-1.jpg",
+    "path": "/dark/camera-dark-1.jpg",
+    "description": "Camera in shadows",
+    "category": "equipment"
+  },
+  {
+    "id": "dark-7",
+    "filename": "lighting-dark-1.jpg",
+    "path": "/dark/lighting-dark-1.jpg",
+    "description": "Dark lighting setup",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-8",
+    "filename": "director-dark-1.jpg",
+    "path": "/dark/director-dark-1.jpg",
+    "description": "Director silhouette",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-9",
+    "filename": "neon-dark-1.jpg",
+    "path": "/dark/neon-dark-1.jpg",
+    "description": "Neon in darkness",
+    "category": "neon"
+  },
+  {
+    "id": "dark-10",
+    "filename": "neon-dark-2.jpg",
+    "path": "/dark/neon-dark-2.jpg",
+    "description": "Cyberpunk mood",
+    "category": "neon"
+  },
+  {
+    "id": "dark-11",
+    "filename": "abstract-dark-1.jpg",
+    "path": "/dark/abstract-dark-1.jpg",
+    "description": "Dark abstract",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-12",
+    "filename": "smoke-dark-1.jpg",
+    "path": "/dark/smoke-dark-1.jpg",
+    "description": "Smoke and shadows",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-13",
+    "filename": "arri-dark-1.jpg",
+    "path": "/dark/arri-dark-1.jpg",
+    "description": "ARRI in darkness",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-14",
+    "filename": "red-camera-dark.jpg",
+    "path": "/dark/red-camera-dark.jpg",
+    "description": "RED camera",
+    "category": "equipment"
+  },
+  {
+    "id": "dark-15",
+    "filename": "lens-dark-1.jpg",
+    "path": "/dark/lens-dark-1.jpg",
+    "description": "Cinema lens",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-16",
+    "filename": "gimbal-dark-1.jpg",
+    "path": "/dark/gimbal-dark-1.jpg",
+    "description": "Gimbal shot",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-17",
+    "filename": "atmosphere-dark-1.jpg",
+    "path": "/dark/atmosphere-dark-1.jpg",
+    "description": "Dark atmosphere",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-18",
+    "filename": "fog-dark-1.jpg",
+    "path": "/dark/fog-dark-1.jpg",
+    "description": "Fog and mystery",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-19",
+    "filename": "mountain-dark-1.jpg",
+    "path": "/dark/mountain-dark-1.jpg",
+    "description": "Dark landscape",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-20",
+    "filename": "urban-dark-1.jpg",
+    "path": "/dark/urban-dark-1.jpg",
+    "description": "Urban darkness",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-21",
+    "filename": "portrait-dark-1.jpg",
+    "path": "/dark/portrait-dark-1.jpg",
+    "description": "Moody portrait",
+    "category": "portrait"
+  },
+  {
+    "id": "dark-22",
+    "filename": "portrait-dark-2.jpg",
+    "path": "/dark/portrait-dark-2.jpg",
+    "description": "Dramatic lighting",
+    "category": "portrait"
+  },
+  {
+    "id": "dark-23",
+    "filename": "portrait-dark-3.jpg",
+    "path": "/dark/portrait-dark-3.jpg",
+    "description": "Shadow play",
+    "category": "portrait"
+  },
+  {
+    "id": "dark-24",
+    "filename": "portrait-dark-4.jpg",
+    "path": "/dark/portrait-dark-4.jpg",
+    "description": "Low key portrait",
+    "category": "portrait"
+  },
+  {
+    "id": "dark-25",
+    "filename": "grain-dark-1.jpg",
+    "path": "/dark/grain-dark-1.jpg",
+    "description": "Film grain texture",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-26",
+    "filename": "texture-dark-1.jpg",
+    "path": "/dark/texture-dark-1.jpg",
+    "description": "Dark texture",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-27",
+    "filename": "abstract-texture-1.jpg",
+    "path": "/dark/abstract-texture-1.jpg",
+    "description": "Abstract dark",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-28",
+    "filename": "motion-dark-1.jpg",
+    "path": "/dark/motion-dark-1.jpg",
+    "description": "Motion in dark",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-29",
+    "filename": "cinematic-dark-1.jpg",
+    "path": "/dark/cinematic-dark-1.jpg",
+    "description": "Cinematic mood",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-30",
+    "filename": "color-dark-1.jpg",
+    "path": "/dark/color-dark-1.jpg",
+    "description": "Color in darkness",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-31",
+    "filename": "vibrant-dark-1.jpg",
+    "path": "/dark/vibrant-dark-1.jpg",
+    "description": "Vibrant dark",
+    "category": "atmospheric"
+  },
+  {
+    "id": "dark-32",
+    "filename": "mood-dark-1.jpg",
+    "path": "/dark/mood-dark-1.jpg",
+    "description": "Dark mood",
+    "category": "atmospheric"
+  }
+]
