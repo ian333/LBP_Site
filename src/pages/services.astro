@@ -1,0 +1,472 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+
+// Paquetes de producción estructurados
+const productionPackages = [
+  {
+    id: 'commercial',
+    title: 'PAQUETE COMERCIAL',
+    subtitle: 'Para spots publicitarios y contenido de marca',
+    description: 'Equipos premium para producciones comerciales que demandan la más alta calidad técnica y visual.',
+    image: '/dark/red-camera-dark.jpg',
+    equipment: {
+      cameras: ['ARRI Alexa 35', 'Sony FX9', 'RED Komodo 6K'],
+      lenses: ['Cooke S4/i Prime Set', 'Zeiss CP.3 Compact Primes', 'Canon CN-E Cinema Primes'],
+      lighting: ['ARRI SkyPanel S60', 'Aputure 300D II', 'Kino Flo Diva-Lite'],
+      grip: ['Ronin 2 Gimbal', 'Technocrane 30ft', 'Dana Dolly Track System'],
+      audio: ['Sound Devices 833', 'Sennheiser MKH 416', 'Lectrosonics Wireless']
+    },
+    features: [
+      'Grabación 4K/6K/8K nativa',
+      'Color science cinematográfica',
+      'Estabilización profesional',
+      'Audio broadcast quality',
+      'Iluminación LED full spectrum'
+    ]
+  },
+  {
+    id: 'music-video',
+    title: 'PAQUETE MUSIC VIDEO',
+    subtitle: 'Creatividad sin límites para videoclips',
+    description: 'Equipos versátiles para narrativas musicales audaces y experimentación visual extrema.',
+    image: '/dark/color-dark-1.jpg',
+    equipment: {
+      cameras: ['RED Weapon 8K', 'Sony FX6', 'Canon C70'],
+      lenses: ['ARRI/Zeiss Master Anamorphic', 'Sigma Art Cinema Line', 'Vintage Glass Collection'],
+      lighting: ['ARRI Orbiter', 'Astera Titan Tubes', 'Godox VL300'],
+      grip: ['MōVI Pro Gimbal', 'Technocrane + Remote Head', 'Slider Motorizado 6ft'],
+      special: ['Phantom TMX High Speed', 'Drone FPV Racing', 'Projection Mapping Rig']
+    },
+    features: [
+      'High speed hasta 1.75M fps',
+      'Lentes anamórficos premium',
+      'Efectos LED programables',
+      'Sistemas de vuelo FPV',
+      'Rigs de proyección mapping'
+    ]
+  },
+  {
+    id: 'fashion',
+    title: 'PAQUETE FASHION',
+    subtitle: 'Elegancia y precisión para moda',
+    description: 'Configuración especializada para fashion films y contenido editorial de alta gama.',
+    image: '/dark/portrait-dark-2.jpg',
+    equipment: {
+      cameras: ['ARRI Alexa Mini LF', 'Sony FX9', 'Canon C300 Mark III'],
+      lenses: ['Cooke Panchro/i Classic', 'Zeiss Supreme Primes', 'Canon L-Series Cinema'],
+      lighting: ['Broncolor Para 222', 'ARRI L-Series LED', 'Profoto B10X Plus'],
+      grip: ['Steadicam Volt', 'Technocrane 15ft', 'Motion Control MoCo'],
+      beauty: ['Beauty Dish Kit', 'Softbox Octagonal 7ft', 'Ring Light LED Pro']
+    },
+    features: [
+      'Full Frame Large Format',
+      'Beauty lighting especializado',
+      'Motion control precisión',
+      'Steadicam ultra suave',
+      'Lentes clásicos cinematográficos'
+    ]
+  },
+  {
+    id: 'documentary',
+    title: 'PAQUETE DOCUMENTAL',
+    subtitle: 'Versatilidad para narrativas reales',
+    description: 'Equipos compactos y confiables para documentales y contenido de no ficción.',
+    image: '/dark/bts-dark-1.jpg',
+    equipment: {
+      cameras: ['Sony FX6', 'Canon C70', 'Blackmagic Pocket 6K Pro'],
+      lenses: ['Canon EF 24-70mm f/2.8', 'Sony E 16-35mm f/2.8', 'Tamron 70-200mm f/2.8'],
+      lighting: ['Aputure Light Storm', 'Godox SL-60W', 'LED Panel Bi-Color Kit'],
+      audio: ['Zoom F6', 'Rode VideoMic Pro Plus', 'Audio-Technica System 10'],
+      accessories: ['SmallRig Cage System', 'Manfrotto Carbon Tripod', 'ND Filter Set']
+    },
+    features: [
+      'Run & gun optimization',
+      'Audio profesional portátil',
+      'Batería extendida 8+ hrs',
+      'Resistente a condiciones adversas',
+      'Configuración rápida'
+    ]
+  }
+];
+
+// Equipos adicionales disponibles
+const additionalEquipment = {
+  cameras: [
+    'ARRI Alexa 35', 'ARRI Alexa Mini LF', 'ARRI Amira',
+    'RED Weapon 8K', 'RED Komodo 6K', 'RED Ranger',
+    'Sony Venice 2', 'Sony FX9', 'Sony FX6', 'Sony A7S III',
+    'Canon C500 Mark II', 'Canon C300 Mark III', 'Canon C70',
+    'Blackmagic URSA Mini Pro 12K', 'Phantom TMX High Speed'
+  ],
+  lenses: [
+    'ARRI/Zeiss Master Anamorphic Set',
+    'Cooke S4/i Prime Set',
+    'Cooke Panchro/i Classic',
+    'Zeiss CP.3 Compact Primes',
+    'Zeiss Supreme Primes',
+    'Canon CN-E Cinema Prime Set',
+    'Sigma Art Cinema Line',
+    'Angenieux Optimo Zoom Collection'
+  ],
+  lighting: [
+    'ARRI SkyPanel S120-C',
+    'ARRI Orbiter',
+    'Aputure Light Storm C300d II',
+    'Astera Titan Tube Kit',
+    'Kino Flo Diva-Lite LED 30',
+    'Godox VL300 Bi-Color',
+    'Profoto B10X Plus Kit'
+  ],
+  grip: [
+    'Technocrane 30ft + Remote Head',
+    'MōVI Pro 3-Axis Gimbal',
+    'Ronin 2 Professional',
+    'Steadicam Volt',
+    'Dana Dolly + 12ft Track',
+    'Motion Control MoCo Bot',
+    'Jib Arm 24ft'
+  ],
+  audio: [
+    'Sound Devices 833 Mixer',
+    'Zoom F6 Multitrack',
+    'Sennheiser MKH 416 Shotgun',
+    'Rode NTG5 Kit',
+    'Lectrosonics Wireless System',
+    'Audio-Technica System 10'
+  ]
+};
+---
+
+<BaseLayout>
+  <Navigation />
+  
+  <!-- Hero Section -->
+  <section class="relative bg-black py-32 overflow-hidden">
+    <!-- Background pattern -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: url('/dark/grain-dark-1.jpg'); background-size: 200px;"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-6 text-center relative">
+      <h1 class="font-display text-6xl md:text-8xl font-black text-white mb-8 tracking-tight">
+        SERVICIOS
+        <span class="block text-gold mt-2">PROFESIONALES</span>
+      </h1>
+      
+      <p class="text-gray-300 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
+        Equipos cinematográficos premium en colaboración con <span class="text-gold font-bold">Cinesonica</span>. 
+        Desde comerciales hasta documentales, tenemos el gear perfecto para tu visión.
+      </p>
+      
+      <!-- Partnership Badge -->
+      <div class="mt-12 inline-flex items-center gap-4 bg-white/5 backdrop-blur-sm border border-white/10 px-8 py-4 rounded-none">
+        <div class="w-3 h-3 bg-gold rounded-full animate-pulse"></div>
+        <span class="text-white font-semibold tracking-wide">PARTNER OFICIAL CINESONICA</span>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Production Packages -->
+  <section class="bg-black py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="font-display text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
+          PAQUETES DE PRODUCCIÓN
+        </h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+          Configuraciones especializadas por tipo de proyecto. Sin precios individuales, solo paquetes completos optimizados.
+        </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-12">
+        {productionPackages.map((pkg) => (
+          <div class="group relative bg-black border border-white/10 overflow-hidden hover:border-gold/50 transition-all duration-500">
+            <!-- Package Image -->
+            <div class="relative h-64 overflow-hidden">
+              <img 
+                src={pkg.image} 
+                alt={pkg.title}
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+              
+              <!-- Package Badge -->
+              <div class="absolute top-6 left-6">
+                <span class="bg-gold text-black px-4 py-2 text-sm font-black tracking-wider">
+                  {pkg.id.toUpperCase()}
+                </span>
+              </div>
+            </div>
+            
+            <!-- Content -->
+            <div class="p-8">
+              <h3 class="font-display text-2xl md:text-3xl font-black text-white mb-2">
+                {pkg.title}
+              </h3>
+              <p class="text-gold text-sm font-bold tracking-widest mb-4 uppercase">
+                {pkg.subtitle}
+              </p>
+              <p class="text-gray-400 text-base leading-relaxed mb-6">
+                {pkg.description}
+              </p>
+              
+              <!-- Equipment Grid -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                <div>
+                  <h4 class="text-gold text-xs font-bold tracking-widest mb-3 uppercase">Cámaras</h4>
+                  <ul class="space-y-1">
+                    {pkg.equipment.cameras.map(camera => (
+                      <li class="text-white text-sm">{camera}</li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 class="text-gold text-xs font-bold tracking-widest mb-3 uppercase">Lentes</h4>
+                  <ul class="space-y-1">
+                    {pkg.equipment.lenses.map(lens => (
+                      <li class="text-white text-sm">{lens}</li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 class="text-gold text-xs font-bold tracking-widest mb-3 uppercase">Iluminación</h4>
+                  <ul class="space-y-1">
+                    {pkg.equipment.lighting.map(light => (
+                      <li class="text-white text-sm">{light}</li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 class="text-gold text-xs font-bold tracking-widest mb-3 uppercase">Grip & Audio</h4>
+                  <ul class="space-y-1">
+                    {pkg.equipment.grip?.map(grip => (
+                      <li class="text-white text-sm">{grip}</li>
+                    ))}
+                    {pkg.equipment.audio?.map(audio => (
+                      <li class="text-white text-sm">{audio}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              
+              <!-- Features -->
+              <div class="mb-8">
+                <h4 class="text-gold text-xs font-bold tracking-widest mb-4 uppercase">Características Destacadas</h4>
+                <div class="flex flex-wrap gap-2">
+                  {pkg.features.map(feature => (
+                    <span class="bg-white/5 text-white text-xs px-3 py-1 border border-white/10">
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              
+              <!-- CTA Button -->
+              <a 
+                href="https://wa.me/5215573633622" 
+                target="_blank"
+                class="group/btn inline-flex items-center bg-gold text-black px-8 py-3 font-black text-sm tracking-wider uppercase hover:bg-white transition-all hover:scale-105"
+              >
+                COTIZAR PAQUETE
+                <span class="ml-2 transform group-hover/btn:translate-x-1 transition-transform">→</span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Additional Equipment Inventory -->
+  <section class="bg-black py-24 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="font-display text-4xl md:text-5xl font-black text-white mb-6">
+          INVENTARIO COMPLETO
+        </h2>
+        <p class="text-gray-400 text-lg">
+          Equipos adicionales disponibles para configuraciones personalizadas
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Cameras -->
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 bg-gold/20 rounded flex items-center justify-center">
+              <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-xl font-bold text-white">CÁMARAS</h3>
+          </div>
+          <ul class="space-y-2">
+            {additionalEquipment.cameras.map(camera => (
+              <li class="text-gray-300 text-sm hover:text-white transition-colors">
+                {camera}
+              </li>
+            ))}
+          </ul>
+        </div>
+        
+        <!-- Lenses -->
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 bg-gold/20 rounded flex items-center justify-center">
+              <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-xl font-bold text-white">LENTES</h3>
+          </div>
+          <ul class="space-y-2">
+            {additionalEquipment.lenses.map(lens => (
+              <li class="text-gray-300 text-sm hover:text-white transition-colors">
+                {lens}
+              </li>
+            ))}
+          </ul>
+        </div>
+        
+        <!-- Lighting -->
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 bg-gold/20 rounded flex items-center justify-center">
+              <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-xl font-bold text-white">ILUMINACIÓN</h3>
+          </div>
+          <ul class="space-y-2">
+            {additionalEquipment.lighting.map(light => (
+              <li class="text-gray-300 text-sm hover:text-white transition-colors">
+                {light}
+              </li>
+            ))}
+          </ul>
+        </div>
+        
+        <!-- Grip -->
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 bg-gold/20 rounded flex items-center justify-center">
+              <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-xl font-bold text-white">GRIP & SOPORTE</h3>
+          </div>
+          <ul class="space-y-2">
+            {additionalEquipment.grip.map(grip => (
+              <li class="text-gray-300 text-sm hover:text-white transition-colors">
+                {grip}
+              </li>
+            ))}
+          </ul>
+        </div>
+        
+        <!-- Audio -->
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 bg-gold/20 rounded flex items-center justify-center">
+              <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-xl font-bold text-white">AUDIO</h3>
+          </div>
+          <ul class="space-y-2">
+            {additionalEquipment.audio.map(audio => (
+              <li class="text-gray-300 text-sm hover:text-white transition-colors">
+                {audio}
+              </li>
+            ))}
+          </ul>
+        </div>
+        
+        <!-- Partnership Info -->
+        <div class="bg-gradient-to-br from-gold/20 via-gold/10 to-transparent border border-gold/30 p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 bg-gold rounded flex items-center justify-center">
+              <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-xl font-bold text-white">CINESONICA</h3>
+          </div>
+          <p class="text-white text-sm leading-relaxed mb-4">
+            Partner oficial para equipo cinematográfico premium. Kodak Official Reseller México & Latin America.
+          </p>
+          <div class="space-y-2">
+            <p class="text-gold text-xs font-bold tracking-widest">BENEFICIOS PARTNERSHIP:</p>
+            <ul class="text-white text-sm space-y-1">
+              <li>• Acceso prioritario a equipos</li>
+              <li>• Soporte técnico especializado</li>
+              <li>• Precios preferenciales</li>
+              <li>• Backup equipment guarantee</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="bg-black py-32 relative">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('/dark/texture-dark-1.jpg'); background-size: 400px;"></div>
+    </div>
+    
+    <div class="max-w-4xl mx-auto text-center px-6 relative">
+      <h2 class="font-display text-4xl md:text-6xl font-black text-white mb-8">
+        ¿LISTO PARA
+        <span class="text-gold block">CREAR JUNTOS?</span>
+      </h2>
+      
+      <p class="text-gray-300 text-xl mb-12 max-w-2xl mx-auto">
+        Cotiza tu próximo proyecto. Paquetes personalizados según tu visión y presupuesto.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <a
+          href="https://wa.me/5215573633622"
+          target="_blank"
+          class="px-12 py-5 bg-gold text-black font-black text-lg tracking-wider uppercase hover:bg-white transition-all hover:scale-105"
+        >
+          COTIZAR PROYECTO
+        </a>
+        <a
+          href="/contact"
+          class="px-12 py-5 border-2 border-white text-white font-black text-lg tracking-wider uppercase hover:bg-white hover:text-black transition-all"
+        >
+          MÁS INFORMACIÓN
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #f4d03f;
+  }
+</style>
