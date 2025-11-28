@@ -29,3 +29,7 @@ pnpm-debug.log*
 
 # cache
 .astro/
+
+# cortex
+cortex/node_modules/
+cortex/dist/
